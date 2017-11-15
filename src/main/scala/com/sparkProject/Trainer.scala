@@ -48,8 +48,8 @@ object Trainer {
       ********************************************************************************/
 
    /** CHARGER LE DATASET **/
-    val df_preprocessed = spark.read.parquet("/Users/mehdiregina/Documents/TP_ParisTech_2017_2018_starter/data/prepared_trainingset")
-
+    val df_preprocessed = spark.read.parquet("data/prepared_trainingset")
+    ///Users/mehdiregina/Documents/TP_ParisTech_2017_2018_starter/
     /** TF-IDF **/
       //séparer les textes en mots (ou tokens) avec un tokenizer
     val tokenizer = new RegexTokenizer()
