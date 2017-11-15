@@ -48,6 +48,7 @@ object Trainer {
       ********************************************************************************/
 
    /** CHARGER LE DATASET **/
+     //Chemin relatif en partant du principe que tu auras les données au même emplacement (issue du preprocessor)
     val df_preprocessed = spark.read.parquet("data/prepared_trainingset")
     ///Users/mehdiregina/Documents/TP_ParisTech_2017_2018_starter/
     /** TF-IDF **/
