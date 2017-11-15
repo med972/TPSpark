@@ -71,13 +71,13 @@ object Trainer {
     //les mots relevés semblent avoir le même indice sur l'ensemble du corpus de texte -> 2 infos
     //Info 1 : fequence d'appartion dans 1 texte donné, Info 2: frequence d'apparition dans le corpus de texte
     //le stage countVectorizer a un paramètre “minDF” qui permet de ne prendre que les mots apparaissant
-    // dans au moins le nombre spécifié par minDF de textes
+    // dans au moins le nombre spécifié par minDF de text
     val cvModel = new CountVectorizer()
       .setInputCol(remover.getOutputCol)
       .setOutputCol("rawFeatures")
 
     //tf-idf reflect the importance of a term to a document in the corpus
-    //Term frequency TF(t,d)TF(t,d) is the number of times that term tt appears in document dd, (1 document = 1 text)
+    //Term frequency TF(t,d)TF(t,d) is the number of times that term appears in document dd, (1 document = 1 text)
     // document frequency DF(t,D)DF(t,D) is the number of documents that contains term tt.
     //input count vectorizer renvoyant l'occurence d'un mot dans un document mais aussi dans un corpus de documents via 1 vecteur
     val idf = new IDF().setInputCol(cvModel.getOutputCol).setOutputCol("tfidf")
